@@ -2,7 +2,7 @@
 
 A complete login + signup authentication system for the CleanAdsSurf Chrome extension.
 
-## 📋 Overview
+## Overview
 
 This authentication system includes:
 
@@ -13,13 +13,13 @@ This authentication system includes:
 
 ### Current Features
 
-✅ Signup form with password confirmation
-✅ Login form with credential validation
-✅ Backend API with mock user (`admin`/`admin`)
-✅ Chrome extension storage integration
-✅ Clean, modern UI with dark/light mode support
-✅ Comprehensive inline documentation
-✅ CORS enabled for development
+[+] Signup form with password confirmation
+[+] Login form with credential validation
+[+] Backend API with mock user (`admin`/`admin`)
+[+] Chrome extension storage integration
+[+] Clean, modern UI with dark/light mode support
+[+] Comprehensive inline documentation
+[+] CORS enabled for development
 
 ### Demo Credentials
 

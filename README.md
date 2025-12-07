@@ -9,13 +9,13 @@ A privacy-focused Chrome extension that blocks intrusive ads and malicious conte
 - Blocks generic tracking patterns and malware delivery networks
 - YouTube & video platform protection (doesn't interfere with video playback)
 
-📊 **Real-Time Statistics**
+** Real-Time Statistics**
 - View today's blocked ads in the popup
 - Total blocked ads across all time
 - Historical stats tracking (last 14 days)
 - Visual charts and analytics in dashboard
 
-🎛️ **Domain Controls**
+**Domain Controls**
 - Enable/disable protection globally with one click
 - Per-domain whitelisting/blacklisting
 - Toggle protection for individual websites
@@ -223,7 +223,7 @@ The extension blocks:
 **Error**: Videos buffer but don't start
 
 **Solution**:
-- ✅ Already fixed! YouTube domains are whitelisted
+- [+] Already fixed! YouTube domains are whitelisted
 - Disable extension and reload page to test
 - Check popup to ensure "Global Protection" is enabled
 
