@@ -2,14 +2,40 @@
 
 A privacy-focused Chrome extension that blocks intrusive ads and malicious content with real-time statistics, per-domain controls, and a beautiful light/dark theme UI.
 
+## Project Structure
+
+```
+ADs/
+├── extension/              # Extension files
+│   ├── manifest.json       # Extension configuration
+│   ├── background.js       # Ad-blocking engine
+│   ├── content.js          # Real-time tracking
+│   ├── popup/              # Extension popup UI
+│   ├── dashboard/          # Statistics dashboard
+│   ├── login.html          # Login page
+│   ├── signup.html         # Signup page
+│   ├── server.js           # Backend API
+│   ├── package.json        # Dependencies
+│   └── routes/             # API routes
+│
+├── website/                # Marketing website
+│   ├── index.html          # Single-page website
+│   ├── styles.css          # Responsive styling
+│   ├── script.js           # Installation logic
+│   └── README.md           # Website docs
+│
+├── README.md               # This file
+└── AUTH_SETUP.md           # Authentication guide
+```
+
 ## Features
 
-✨ **Ad Blocking**
+**Ad Blocking**
 - Blocks major ad networks (Google, Doubleclick, Taboola, Outbrain, Criteo, etc.)
 - Blocks generic tracking patterns and malware delivery networks
 - YouTube & video platform protection (doesn't interfere with video playback)
 
-** Real-Time Statistics**
+**Real-Time Statistics**
 - View today's blocked ads in the popup
 - Total blocked ads across all time
 - Historical stats tracking (last 14 days)
@@ -21,15 +47,49 @@ A privacy-focused Chrome extension that blocks intrusive ads and malicious conte
 - Toggle protection for individual websites
 - Persistent settings across sessions
 
-🌓 **Theme Support**
+**Theme Support**
 - Beautiful dark mode (default)
 - Professional light mode
 - Remembers your preference
 
-🔐 **Authentication System**
+**Authentication System**
 - Login/signup pages with backend API
 - Chrome Storage integration
 - Demo credentials: `admin` / `admin`
+
+## Quick Start
+
+### 1. Load Extension
+
+```bash
+# Navigate to extension folder
+cd extension
+
+# Install dependencies
+npm install
+
+# Start backend API
+npm start
+```
+
+The API will run on `http://localhost:3000`
+
+Then load the extension:
+1. Open Chrome and go to `chrome://extensions/`
+2. Enable **Developer Mode** (top right toggle)
+3. Click **Load unpacked**
+4. Select the `extension/` folder
+5. Extension is now active!
+
+### 2. View Website
+
+```bash
+cd website
+python -m http.server 8000
+# Open: http://localhost:8000
+```
+
+The website showcases the extension and provides installation guides.
 
 ## Installation
 
@@ -48,6 +108,7 @@ cd ADs
 ### Step 2: Install Backend Dependencies
 
 ```bash
+cd extension
 npm install
 ```
 
@@ -74,7 +135,7 @@ The API will run on `http://localhost:3000` with these endpoints:
 1. Open Chrome and go to `chrome://extensions/`
 2. Enable **Developer Mode** (toggle in top right)
 3. Click **Load unpacked**
-4. Select the project directory (where `manifest.json` is located)
+4. Select the `extension/` folder
 5. The CleanAdsSurf extension will appear in your extensions list
 
 ### Step 5: Activate the Extension

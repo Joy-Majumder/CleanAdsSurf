@@ -64,7 +64,7 @@ function toggleTheme() {
   const currentTheme = document.body.dataset.theme;
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
   document.body.dataset.theme = newTheme;
-  window.els.themeToggle.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+  window.els.themeToggle.textContent = newTheme === 'dark' ? 'Night' : 'Day';
   chrome.storage.local.set({ theme: newTheme });
 }
 

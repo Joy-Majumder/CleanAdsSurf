@@ -3,6 +3,55 @@ const HISTORY_DAYS_TO_KEEP = 14;
 
 const BASE_RULES = [
   {
+    id: 1000,
+    priority: 10000,
+    action: { type: "allow" },
+    condition: {
+      urlFilter: "||googlevideo.com^"
+    }
+  },
+  {
+    id: 1001,
+    priority: 10000,
+    action: { type: "allow" },
+    condition: {
+      urlFilter: "||videodelivery.net^"
+    }
+  },
+  {
+    id: 1002,
+    priority: 10000,
+    action: { type: "allow" },
+    condition: {
+      urlFilter: "||youtube.com^"
+    }
+  },
+  {
+    id: 1003,
+    priority: 10000,
+    action: { type: "allow" },
+    condition: {
+      urlFilter: "||youtu.be^"
+    }
+  },
+  {
+    id: 1004,
+    priority: 10000,
+    action: { type: "allow" },
+    condition: {
+      urlFilter: "||m.youtube.com^"
+    }
+  },
+  {
+    id: 1005,
+    priority: 10000,
+    action: { type: "allow" },
+    condition: {
+      urlFilter: "*youtube*",
+      initiatorDomains: ["youtube.com", "youtu.be", "m.youtube.com"]
+    }
+  },
+  {
     id: 1,
     priority: 1,
     action: { type: "block" },
@@ -210,7 +259,14 @@ const BASE_RULES = [
     action: { type: "block" },
     condition: {
       urlFilter: "*://*/?*ads*",
-      resourceTypes: ["xmlhttprequest", "image", "script"]
+      resourceTypes: ["xmlhttprequest", "image", "script"],
+      excludedInitiatorDomains: [
+        "youtube.com",
+        "youtu.be",
+        "m.youtube.com",
+        "googlevideo.com",
+        "videodelivery.net"
+      ]
     }
   },
   {
@@ -219,7 +275,8 @@ const BASE_RULES = [
     action: { type: "block" },
     condition: {
       urlFilter: "*://*/*ad.js*",
-      resourceTypes: ["script"]
+      resourceTypes: ["script"],
+      excludedInitiatorDomains: ["youtube.com", "youtu.be", "m.youtube.com"]
     }
   },
   {
@@ -228,7 +285,8 @@ const BASE_RULES = [
     action: { type: "block" },
     condition: {
       urlFilter: "*banner*",
-      resourceTypes: ["image", "script", "xmlhttprequest"]
+      resourceTypes: ["image", "script", "xmlhttprequest"],
+      excludedInitiatorDomains: ["youtube.com", "youtu.be", "m.youtube.com"]
     }
   },
   {
@@ -677,19 +735,42 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         .then(sendResponse)
         .catch(() => sendResponse({ error: true }));
       return true;
+    case "recordBlocked":
+      recordBlockedRequest()
+        .then(() => sendResponse({ success: true }))
+        .catch(() => sendResponse({ error: true }));
+      return true;
     default:
       break;
   }
 });
 
-chrome.declarativeNetRequest.onRuleMatchedDebug.addListener(async () => {
-  await recordBlockedRequest();
+chrome.declarativeNetRequest.onRuleMatchedDebug.addListener(async (details) => {
+  if (details && details.rule && details.rule.action && details.rule.action.type === "block") {
+    await recordBlockedRequest();
+    console.log("Ad blocked:", details.request.url);
+  }
 });
+
+setInterval(async () => {
+  try {
+    const state = await chrome.storage.local.get(["globalEnabled"]);
+    if (state.globalEnabled) {
+      const rules = await chrome.declarativeNetRequest.getDynamicRules();
+      console.log(`Status check: ${rules.length} rules active`);
+    }
+  } catch (error) {
+    console.warn("Status check error:", error);
+  }
+}, 30000);
 
 async function bootstrap() {
   try {
+    console.log("Bootstrap started...");
     const state = await ensureDefaults();
+    console.log("Default state ensured:", { globalEnabled: state.globalEnabled, statsToday: state.stats.today });
     await applyRules(state);
+    console.log("Bootstrap complete");
   } catch (error) {
     console.error("Bootstrap error:", error);
   }
@@ -847,6 +928,7 @@ async function applyRules(state) {
         await chrome.declarativeNetRequest.updateDynamicRules({
           removeRuleIds
         });
+        console.log("Rules disabled (globalEnabled: false)");
       } catch (error) {
         console.error("Failed to remove rules:", error);
       }
@@ -854,31 +936,35 @@ async function applyRules(state) {
     return;
   }
 
-  const rules = BASE_RULES.map((rule) => {
-    const isAdRule = [1, 2, 3, 4, 5, 6, 7, 8, 20, 21].includes(rule.id);
-    const ruleYoutubeExclusions = isAdRule ? youtubeExcludedDomains : [];
-    
-    const ruleExcludedDomains = rule.condition.excludedInitiatorDomains || [];
-    const mergedExcludedDomains = [...new Set([...ruleExcludedDomains, ...ruleYoutubeExclusions, ...userExcludedDomains])];
-    
-    const newCondition = { ...rule.condition };
-    delete newCondition.excludedDomains;
-    
-    if (mergedExcludedDomains.length) {
-      newCondition.excludedInitiatorDomains = mergedExcludedDomains;
-    }
-    
-    return {
-      ...rule,
-      condition: newCondition
-    };
-  });
+  const rules = BASE_RULES
+    .filter((rule) => rule.id >= 1)
+    .map((rule) => {
+      const isAdRule = [1, 2, 3, 4, 5, 6, 7, 8, 20, 21].includes(rule.id);
+      const ruleYoutubeExclusions = isAdRule ? youtubeExcludedDomains : [];
+      
+      const ruleExcludedDomains = rule.condition.excludedInitiatorDomains || [];
+      const mergedExcludedDomains = [...new Set([...ruleExcludedDomains, ...ruleYoutubeExclusions, ...userExcludedDomains])];
+      
+      const newCondition = { ...rule.condition };
+      delete newCondition.excludedDomains;
+      
+      if (mergedExcludedDomains.length) {
+        newCondition.excludedInitiatorDomains = mergedExcludedDomains;
+      }
+      
+      return {
+        ...rule,
+        condition: newCondition
+      };
+    });
 
   try {
     await chrome.declarativeNetRequest.updateDynamicRules({
       removeRuleIds,
       addRules: rules
     });
+    console.log(`Rules applied: ${rules.length} rules active (globalEnabled: true)`);
+    console.log("First few rules:", rules.slice(0, 3));
   } catch (error) {
     console.error("Failed to update declarative net request rules:", error);
     throw error;
