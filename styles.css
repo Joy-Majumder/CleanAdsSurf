@@ -14,7 +14,6 @@
   --warning: #f59e0b;
   --danger: #ef4444;
   
-  /* Dark Mode Only */
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
   --bg-tertiary: #1a2332;
@@ -54,7 +53,6 @@ body {
   padding: 0 20px;
 }
 
-/* Navbar */
 .navbar {
   background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(20px);
@@ -115,7 +113,6 @@ body {
   color: var(--primary-light);
 }
 
-/* Buttons */
 .btn {
   padding: 1rem 2rem;
   border: none;
@@ -440,7 +437,6 @@ body {
   line-height: 1.6;
 }
 
-/* How It Works Section */
 .how-it-works {
   padding: 6rem 0;
   background: var(--bg-secondary);
@@ -532,7 +528,6 @@ body {
   font-weight: 600;
 }
 
-/* Install Section */
 .install-section {
   padding: 6rem 0;
   background: var(--bg-primary);
@@ -667,7 +662,6 @@ body {
   font-weight: bold;
 }
 
-/* Stats Section */
 .stats-section {
   padding: 6rem 0;
   background: var(--bg-primary);
@@ -707,7 +701,6 @@ body {
   font-weight: 500;
 }
 
-/* FAQ Section */
 .faq-section {
   padding: 6rem 0;
   background: var(--bg-secondary);
@@ -745,7 +738,6 @@ body {
   line-height: 1.5;
 }
 
-/* Footer */
 .footer {
   background: #0a0f1a;
   border-top: 1px solid var(--border);
@@ -797,7 +789,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Modal */
 .modal {
   position: fixed;
   top: 0;
@@ -880,7 +871,6 @@ body {
   padding-top: 0.5rem;
 }
 
-/* Animations */
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -966,7 +956,6 @@ body {
   }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
@@ -1077,7 +1066,6 @@ body {
   }
 }
 
-/* Developer Page */
 .developer-hero {
   padding: 6rem 0;
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
@@ -1187,7 +1175,6 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
-/* Projects Section */
 .projects-section {
   padding: 6rem 0;
   background: var(--bg-secondary);
@@ -1336,7 +1323,6 @@ body {
   opacity: 0.6;
 }
 
-/* Skills Section */
 .skills-section {
   padding: 6rem 0;
   background: var(--bg-primary);

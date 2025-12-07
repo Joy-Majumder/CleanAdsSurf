@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function setupThemeToggle() {
-  // Dark mode only - apply immediately
   document.body.classList.add('dark-mode');
 }
 
@@ -110,7 +109,7 @@ function downloadExtension() {
   const fileName = 'CleanAdsSurf-Extension.zip';
   
   const link = document.createElement('a');
-  link.href = '../'; // This would need to be replaced with actual ZIP URL
+  link.href = '../';
   link.download = fileName;
   
   document.body.appendChild(link);
@@ -231,14 +230,12 @@ function showNotification(message, type = 'info') {
   }, 3000);
 }
 
-// Version info
 const VERSION = '0.1.0';
 const EXTENSION_NAME = 'CleanAdsSurf';
 
 console.log(`${EXTENSION_NAME} Website v${VERSION}`);
 console.log('For installation instructions, visit the Install section above.');
 
-// Track page views
 if (typeof gtag !== 'undefined') {
   window.addEventListener('load', () => {
     gtag('event', 'page_view');
