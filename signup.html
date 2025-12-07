@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CleanAdsSurf Signup</title>
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <main class="auth-shell">
+      <div class="auth-card">
+        <div class="logo">CleanAdsSurf</div>
+        <div class="subtitle">Create your account</div>
+
+        <form id="signup-form">
+          <label class="field">
+            <span>Username</span>
+            <input type="text" id="signup-username" name="username" required />
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input type="email" id="signup-email" name="email" required />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input type="password" id="signup-password" name="password" required />
+          </label>
+
+          <label class="field">
+            <span>Confirm Password</span>
+            <input
+              type="password"
+              id="signup-confirm"
+              name="confirmPassword"
+              required
+            />
+          </label>
+
+          <div class="error" id="signup-error"></div>
+
+          <button type="submit" class="primary">Sign Up</button>
+        </form>
+
+        <div class="muted link-row">
+          Already have an account?
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+    </main>
+    <script src="signup.js"></script>
+  </body>
+</html>

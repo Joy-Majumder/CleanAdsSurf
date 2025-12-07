@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CleanAdsSurf</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <div class="brand">
+          <div class="badge">CAS</div>
+          <div>
+            <div class="title">CleanAdsSurf</div>
+            <div class="subtitle">Focused, fast protection</div>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <label class="switch">
+            <input type="checkbox" id="global-toggle" />
+            <span class="slider"></span>
+            <span class="switch-label">Global</span>
+          </label>
+          <button class="ghost theme-toggle" id="theme-toggle" type="button">
+            L/D
+          </button>
+        </div>
+      </header>
+
+      <section class="status-grid">
+        <div class="card stat">
+          <div class="stat-label">Blocked today</div>
+          <div class="stat-value" id="today-count">0</div>
+          <div class="pill">Live</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Blocked total</div>
+          <div class="stat-value" id="total-count">0</div>
+          <div class="pill muted">Since install</div>
+        </div>
+        <div class="card domain-card">
+          <div class="domain-heading">
+            <div>
+              <div class="stat-label">Current domain</div>
+              <div class="domain-name" id="domain-name">Loading…</div>
+            </div>
+            <label class="switch tight">
+              <input type="checkbox" id="domain-toggle" />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="domain-status" id="domain-status">Preparing shield…</div>
+        </div>
+      </section>
+
+      <section class="pulse-section">
+        <div class="card pulse-card">
+          <div class="pulse-header">
+            <div>
+              <div class="stat-label">Protection pulse</div>
+              <div class="chart-sub">Live shield intensity</div>
+            </div>
+            <button class="ghost refresh" id="refresh-button" type="button">
+              ↻
+            </button>
+          </div>
+          <div class="pulse-visual" id="pulse-visual">
+            <div class="pulse-ring ring-1"></div>
+            <div class="pulse-ring ring-2"></div>
+            <div class="pulse-ring ring-3"></div>
+            <div class="pulse-core">
+              <div class="pulse-number" id="pulse-today">0</div>
+              <div class="pulse-caption">blocked today</div>
+              <div class="pulse-intensity" id="pulse-intensity">Calm</div>
+            </div>
+          </div>
+          <div class="pulse-badges">
+            <div class="pill">Total: <span id="pulse-total">0</span></div>
+            <div class="pill muted" id="pulse-mode">Shield steady</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="action-buttons">
+        <button type="button" class="btn btn-primary">Speed & VPN</button>
+        <button type="button" class="btn btn-secondary">Dashboard</button>
+      </section>
+
+      <section class="footnote">
+        <div class="dot online" id="status-dot"></div>
+        <span id="status-text">Shield ready</span>
+      </section>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

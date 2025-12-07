@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CleanAdsSurf Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <div class="brand">
+          <div class="badge">CAS</div>
+          <div class="meta">
+            <div class="title">CleanAdsSurf</div>
+            <div class="subtitle">Control center</div>
+          </div>
+        </div>
+        <div class="top-actions">
+          <a href="#" class="ghost nav-link" type="button">Speed & VPN</a>
+          <label class="switch">
+            <input type="checkbox" id="global-toggle" />
+            <span class="slider"></span>
+            <span class="label">Global protection</span>
+          </label>
+          <button id="theme-toggle" class="ghost" type="button">L/D</button>
+          <button id="refresh" class="ghost" type="button">Refresh</button>
+        </div>
+      </header>
+
+      <section class="grid metrics">
+        <div class="card metric">
+          <div class="muted">Blocked today</div>
+          <div class="value" id="today-count">0</div>
+          <div class="hint live">Live counter</div>
+        </div>
+        <div class="card metric">
+          <div class="muted">Blocked total</div>
+          <div class="value" id="total-count">0</div>
+          <div class="hint">Since install</div>
+        </div>
+        <div class="card metric status-card">
+          <div class="muted">Protection status</div>
+          <div class="value small" id="status-text">Loading…</div>
+          <div class="status-dot online" id="status-dot"></div>
+        </div>
+      </section>
+
+      <section class="grid panels">
+        <div class="card history-card">
+          <div class="section-head">
+            <div>
+              <div class="muted">History</div>
+              <div class="section-title">Last 14 days</div>
+            </div>
+          </div>
+          <div id="history-bars" class="bars"></div>
+          <div id="history-list" class="history-list"></div>
+        </div>
+        <div class="card domains-card">
+          <div class="section-head">
+            <div>
+              <div class="muted">Domain controls</div>
+              <div class="section-title">Overrides</div>
+            </div>
+          </div>
+          <div id="domains" class="domain-list"></div>
+          <div class="note">
+            Domains appear here after you toggle them in the popup or dashboard.
+          </div>
+        </div>
+      </section>
+
+      <section class="card data-card">
+        <div class="section-head">
+          <div>
+            <div class="muted">Data</div>
+            <div class="section-title">Local storage</div>
+          </div>
+        </div>
+        <p class="note">
+          Stats are stored locally in <code>chrome.storage.local</code>. A
+          <code>data/stats.json</code> file can be generated/exported for
+          backups or debugging; it is not sent anywhere.
+        </p>
+      </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

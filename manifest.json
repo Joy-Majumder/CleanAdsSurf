@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "CleanAdsSurf",
+  "description": "Privacy-focused Chrome extension that blocks intrusive ads and malicious content with real-time stats and per-domain controls.",
+  "version": "0.1.0",
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "CleanAdsSurf"
+  },
+  "options_page": "dashboard/dashboard.html",
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "minimum_chrome_version": "114"
+}

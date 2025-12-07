@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speed & VPN - CleanAdsSurf</title>
+  <link rel="stylesheet" href="speed.css">
+</head>
+<body data-theme="dark">
+  <div class="speed-container">
+    <header class="header">
+      <div class="header-left">
+        <a href="#" class="back-btn">← Dashboard</a>
+        <h1>Internet Speed & VPN</h1>
+      </div>
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </header>
+
+    <main class="main-content">
+      <section class="speed-test-section">
+        <div class="speed-card">
+          <h2>Speed Test</h2>
+          <div class="speed-meter">
+            <div class="speed-display">
+              <div class="speed-value" id="speed-value">0</div>
+              <div class="speed-unit" id="speed-unit">Mbps</div>
+            </div>
+            <div class="speed-progress">
+              <div class="progress-bar" id="progress-bar"></div>
+            </div>
+          </div>
+
+          <div class="speed-details">
+            <div class="detail-item">
+              <span class="detail-label">Download</span>
+              <span class="detail-value" id="download-speed">0 Mbps</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Upload</span>
+              <span class="detail-value" id="upload-speed">0 Mbps</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Ping</span>
+              <span class="detail-value" id="ping-speed">0 ms</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Status</span>
+              <span class="detail-value" id="connection-status">Ready</span>
+            </div>
+          </div>
+
+          <button id="test-btn" class="test-btn">START TEST</button>
+        </div>
+      </section>
+
+      <section class="vpn-section">
+        <div class="vpn-card">
+          <h2>VPN Connection</h2>
+          
+          <div class="vpn-status">
+            <div class="status-indicator" id="vpn-indicator"></div>
+            <div class="status-text">
+              <div class="status-title" id="vpn-status-title">VPN Disconnected</div>
+              <div class="status-ip" id="vpn-status-ip">IP: Detecting...</div>
+            </div>
+          </div>
+
+          <div class="vpn-servers">
+            <h3>Available Servers</h3>
+            <div class="servers-list">
+              <div class="server-item" data-server="us">
+                <div class="server-flag">🇺🇸</div>
+                <div class="server-info">
+                  <div class="server-name">United States</div>
+                  <div class="server-speed">Ultra Fast</div>
+                </div>
+                <button class="connect-btn">CONNECT</button>
+              </div>
+              <div class="server-item" data-server="uk">
+                <div class="server-flag">🇬🇧</div>
+                <div class="server-info">
+                  <div class="server-name">United Kingdom</div>
+                  <div class="server-speed">Very Fast</div>
+                </div>
+                <button class="connect-btn">CONNECT</button>
+              </div>
+              <div class="server-item" data-server="de">
+                <div class="server-flag">🇩🇪</div>
+                <div class="server-info">
+                  <div class="server-name">Germany</div>
+                  <div class="server-speed">Very Fast</div>
+                </div>
+                <button class="connect-btn">CONNECT</button>
+              </div>
+              <div class="server-item" data-server="jp">
+                <div class="server-flag">🇯🇵</div>
+                <div class="server-info">
+                  <div class="server-name">Japan</div>
+                  <div class="server-speed">Fast</div>
+                </div>
+                <button class="connect-btn">CONNECT</button>
+              </div>
+              <div class="server-item" data-server="au">
+                <div class="server-flag">🇦🇺</div>
+                <div class="server-info">
+                  <div class="server-name">Australia</div>
+                  <div class="server-speed">Fast</div>
+                </div>
+                <button class="connect-btn">CONNECT</button>
+              </div>
+              <div class="server-item" data-server="ca">
+                <div class="server-flag">🇨🇦</div>
+                <div class="server-info">
+                  <div class="server-name">Canada</div>
+                  <div class="server-speed">Ultra Fast</div>
+                </div>
+                <button class="connect-btn">CONNECT</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="vpn-stats">
+            <div class="stat-item">
+              <span class="stat-label">Data Used</span>
+              <span class="stat-value" id="data-used">0 MB</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Connected Time</span>
+              <span class="stat-value" id="connected-time">00:00:00</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Current Server</span>
+              <span class="stat-value" id="current-server">None</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="network-info">
+        <div class="info-card">
+          <h2>Network Information</h2>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">ISP</span>
+              <span class="info-value" id="isp">Detecting...</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Country</span>
+              <span class="info-value" id="country">Detecting...</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">City</span>
+              <span class="info-value" id="city">Detecting...</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Public IP</span>
+              <span class="info-value" id="public-ip">Detecting...</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Connection Type</span>
+              <span class="info-value" id="connection-type">Detecting...</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Timezone</span>
+              <span class="info-value" id="timezone">Detecting...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="speed.js"></script>
+</body>
+</html>

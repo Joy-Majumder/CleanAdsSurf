@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CleanAdsSurf Login</title>
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <main class="auth-shell">
+      <div class="auth-card">
+        <div class="logo">CleanAdsSurf</div>
+        <div class="subtitle">Login to sync your protection</div>
+
+        <form id="login-form">
+          <label class="field">
+            <span>Email</span>
+            <input type="text" id="login-email" name="email" required />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input type="password" id="login-password" name="password" required />
+          </label>
+
+          <div class="error" id="login-error"></div>
+
+          <button type="submit" class="primary">Login</button>
+        </form>
+
+        <div class="muted link-row">
+          Don't have an account?
+          <a href="signup.html">Sign up</a>
+        </div>
+      </div>
+    </main>
+    <script src="login.js"></script>
+  </body>
+</html>
