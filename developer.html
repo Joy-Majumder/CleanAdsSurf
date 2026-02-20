@@ -1,201 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Developer - Joy Gopal Majumder</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <nav class="navbar">
-    <div class="container">
-      <div class="logo">
-        <img src="icon.png" alt="CleanAdsSurf" class="logo-icon">
-        <span class="logo-text">CleanAdsSurf</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="developer.html" class="nav-link">Developer</a></li>
-      </ul>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Meet the CleanAdsSurf developer and explore active projects and skills."
+    />
+    <title>CleanAdsSurf | Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="site-header">
+        <nav class="nav container">
+          <a href="index.html" class="brand" aria-label="CleanAdsSurf Home">
+            <img src="logo.png" alt="CleanAdsSurf" class="brand-icon" />
+            <span>CleanAdsSurf</span>
+          </a>
 
-  <section class="developer-hero">
-    <div class="container">
-      <div class="developer-intro">
-        <h1 class="page-title">Meet the Developer</h1>
-        <p class="page-subtitle">Building innovative tools for a cleaner, faster web</p>
-      </div>
-    </div>
-  </section>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
 
-  <section class="developer-profile">
-    <div class="container">
-      <div class="profile-card">
-        <div class="profile-header">
-          <h2>Joy Gopal Majumder</h2>
-          <p class="profile-title">AI & ML Enthusiast | Open Source Enthusiast</p>
-        </div>
-        <div class="profile-bio">
-          <p>I am a Computer Science & Engineering undergraduate at United International University and an active member of the IEEE. My passion lies in Artificial Intelligence and Machine Learning, where I constantly explore new models, algorithms, and applications.</p>
-          <p>I am currently learning Python, Go, Java, and Rust, while focusing on developing skills in data science, machine learning frameworks, and research writing (LaTeX).</p>
-          <p>My long-term goal is to contribute to impactful AI/ML research and projects, particularly those solving real-world challenges. I am eager to collaborate, learn from the IEEE community, and share my journey in technology and research.</p>
-        </div>
-        <div class="profile-links">
-          <a href="https://github.com/Joy-Majumder" target="_blank" class="profile-link">GitHub</a>
-          <a href="https://stackoverflow.com/users/20330780/joy0x1" target="_blank" class="profile-link">StackOverFlow</a>
-          <a href="https://www.linkedin.com/in/joy0x1" target="_blank" class="profile-link">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="projects-section">
-    <div class="container">
-      <h2 class="section-title">Active Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-header">
-            <h3>CleanAdsSurf</h3>
-            <span class="project-status">Active</span>
-          </div>
-          <p class="project-description">An open-source Chrome extension built with Manifest V3 that blocks ads, improves browsing speed, and protects privacy with zero data collection.</p>
-          <div class="project-features">
-            <span class="feature-tag">Chrome Extension</span>
-            <span class="feature-tag">Manifest V3</span>
-            <span class="feature-tag">Privacy First</span>
-            <span class="feature-tag">Open Source</span>
-          </div>
-          <div class="project-stats">
-            <div class="stat">
-              <div class="stat-value">84+</div>
-              <div class="stat-name">Networks Blocked</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">0</div>
-              <div class="stat-name">Data Collected</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">&lt;1ms</div>
-              <div class="stat-name">Block Latency</div>
-            </div>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Joy-Majumder/CleanAdsSurf" target="_blank" class="project-link">View GitHub</a>
-            <a href="https://casurf.netlify.app/" target="_blank" class="project-link">Project Website</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <h3>Fusion</h3>
-            <span class="project-status ongoing">Ongoing</span>
-          </div>
-          <!-- <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; font-style: italic;">just under development</p> -->
-          <p class="project-description">A web music player aims to connect all music streaming services at once..</p>
-          <div class="project-features">
-            <span class="feature-tag">Under development</span>
-          </div>
-          <div class="project-stats">
-            <div class="stat">
-              <div class="stat-value">∞</div>
-              <div class="stat-name">Potential</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">100%</div>
-              <div class="stat-name">Custom</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">TBD</div>
-              <div class="stat-name">Release</div>
-            </div>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link disabled">Coming Soon</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="skills-section">
-    <div class="container">
-      <h2 class="section-title">Skills & Expertise</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Frontend</h4>
-          <ul class="skill-list">
-            <li>HTML5 / CSS3</li>
-            <li>JavaScript (ES6+)</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h4>Backend</h4>
-          <ul class="skill-list">
-            <li>Python</li>
-            <li>Rust</li>
-            <li>C</li>
-            <li>Database Design</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h4>Browser Extensions</h4>
-          <ul class="skill-list">
-            <li>Manifest V3</li>
-            <li>Chrome APIs</li>
-            <li>Content Scripts</li>
-            <li>Service Workers</li>
-            <li>Extension Publishing</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h4>Tools & Platforms</h4>
-          <ul class="skill-list">
-            <li>Git & GitHub</li>
-            <li>VS Code</li>
-            <li>Chrome DevTools</li>
-            <li>Docker</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
+          <ul id="nav-links" class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="developer.html">Developer</a></li>
-            <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#install">Installation</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
           </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="https://github.com/Joy-Majumder" target="_blank">GitHub</a></li>
-            <li><a href="#" target="_blank">Privacy Policy</a></li>
-            <li><a href="#" target="_blank">Terms of Service</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
-            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-            <li><a href="mailto:contact@example.com">Email</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Joy. All rights reserved. Built with passion for the web.</p>
-      </div>
-    </div>
-  </footer>
+        </nav>
+      </header>
 
-  <script src="script.js"></script>
-</body>
+      <main>
+        <section class="page-hero">
+          <div class="container">
+            <p class="kicker">Builder Profile</p>
+            <h1>Meet the developer behind CleanAdsSurf</h1>
+            <p>
+              Focused on practical browser tooling, privacy-first UX, and lightweight
+              extension workflows.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container people-grid">
+            <article class="person-card">
+              <h2>Joy Gopal Majumder</h2>
+              <p>
+                Computer Science & Engineering undergraduate, active in IEEE, and deeply
+                interested in AI/ML systems plus practical developer tools.
+              </p>
+              <p>
+                Current focus includes JavaScript, Python, Go, Rust, and building web products
+                that are fast, safe, and easy to operate.
+              </p>
+
+              <div class="meta-row">
+                <span class="meta-chip">AI / ML Enthusiast</span>
+                <span class="meta-chip">Open Source</span>
+                <span class="meta-chip">Extension Developer</span>
+              </div>
+
+              <div class="link-row">
+                <a href="https://github.com/Joy-Majumder" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://stackoverflow.com/users/20330780/joy0x1" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Stack Overflow</a>
+                <a href="https://www.linkedin.com/in/joy0x1" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </article>
+
+            <article class="person-card">
+              <h2>Core Goals</h2>
+              <p>
+                Build tools that improve day-to-day browsing and development quality without
+                unnecessary complexity.
+              </p>
+              <ul class="card-list">
+                <li>Simple, reliable browser protection workflows.</li>
+                <li>Performance-first extension architecture.</li>
+                <li>Clear docs and maintainable codebase structure.</li>
+                <li>Useful privacy defaults with transparent behavior.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <p class="kicker">Projects</p>
+              <h2>Active and in-progress work</h2>
+            </div>
+
+            <div class="projects-grid">
+              <article class="project-card">
+                <h3>CleanAdsSurf</h3>
+                <p>
+                  Privacy-focused Chrome extension using Manifest V3 with ad/tracker blocking,
+                  local stats, domain control, and dashboard utilities.
+                </p>
+                <div class="meta-row">
+                  <span class="meta-chip">Manifest V3</span>
+                  <span class="meta-chip">Chrome APIs</span>
+                  <span class="meta-chip">Privacy First</span>
+                </div>
+                <div class="link-row">
+                  <a href="https://github.com/Joy-Majumder/CleanAdsSurf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Repository</a>
+                  <a href="index.html" class="btn btn-outline">Project Website</a>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <h3>Fusion (In Progress)</h3>
+                <p>
+                  Web music player concept that aims to unify multiple streaming experiences into
+                  a single clean interface.
+                </p>
+                <div class="meta-row">
+                  <span class="meta-chip">Under Development</span>
+                  <span class="meta-chip">UX Focus</span>
+                </div>
+                <div class="link-row">
+                  <button class="btn btn-outline" type="button" disabled>Public preview coming soon</button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <p class="kicker">Skills</p>
+              <h2>Current stack and tools</h2>
+            </div>
+
+            <div class="skills-grid">
+              <article class="skill-card">
+                <h3>Frontend</h3>
+                <p>HTML5, CSS3, JavaScript (ES6+), responsive UI architecture.</p>
+              </article>
+
+              <article class="skill-card">
+                <h3>Backend & Systems</h3>
+                <p>Python, Go, Rust, C, and practical backend service design.</p>
+              </article>
+
+              <article class="skill-card">
+                <h3>Browser Extension</h3>
+                <p>Manifest V3, service workers, content scripts, declarative rules.</p>
+              </article>
+
+              <article class="skill-card">
+                <h3>Tooling</h3>
+                <p>Git/GitHub, VS Code, Chrome DevTools, Docker workflows.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <a href="index.html" class="brand">
+              <img src="logo.png" alt="CleanAdsSurf" class="brand-icon" />
+              <span>CleanAdsSurf</span>
+            </a>
+            <p>Block ads. Surf clean. Privacy first.</p>
+          </div>
+
+          <div>
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="developer.html">Developer</a></li>
+              <li><a href="privacy.html">Privacy</a></li>
+              <li><a href="terms.html">Terms</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Links</h4>
+            <ul>
+              <li><a href="https://github.com/Joy-Majumder/CleanAdsSurf" target="_blank" rel="noopener noreferrer">Project GitHub</a></li>
+              <li><a href="https://github.com/Joy-Majumder" target="_blank" rel="noopener noreferrer">Personal GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container footer-bottom">
+          <p>© <span data-year></span> CleanAdsSurf. Built with focus and pragmatism.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="site.js"></script>
+  </body>
 </html>

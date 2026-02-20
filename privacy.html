@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CleanAdsSurf | Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="site-header">
+        <nav class="nav container">
+          <a href="index.html" class="brand" aria-label="CleanAdsSurf Home">
+            <img src="logo.png" alt="CleanAdsSurf" class="brand-icon" />
+            <span>CleanAdsSurf</span>
+          </a>
+
+          <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul id="nav-links" class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="developer.html">Developer</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <div class="container">
+            <p class="kicker">Legal</p>
+            <h1>Privacy Policy</h1>
+            <p>Last updated: February 20, 2026</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container doc-layout">
+            <aside class="doc-nav">
+              <h3>Sections</h3>
+              <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#collect">Data Collected</a></li>
+                <li><a href="#storage">Local Storage</a></li>
+                <li><a href="#permissions">Permissions</a></li>
+                <li><a href="#third-party">Third-Party Requests</a></li>
+                <li><a href="#retention">Retention</a></li>
+                <li><a href="#changes">Policy Changes</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </aside>
+
+            <article class="doc-content">
+              <section id="overview">
+                <h2>1. Overview</h2>
+                <p>
+                  CleanAdsSurf is designed as a privacy-first Chrome extension. Core filtering,
+                  domain controls, and local stats run in your browser environment.
+                </p>
+              </section>
+
+              <section id="collect">
+                <h2>2. Data Collected</h2>
+                <p>
+                  By default, CleanAdsSurf does not sell personal browsing data and does not require
+                  remote account usage for core blocking features.
+                </p>
+                <p>
+                  If optional authentication demo pages are used, submitted credentials are handled by
+                  your configured backend service.
+                </p>
+              </section>
+
+              <section id="storage">
+                <h2>3. Local Storage</h2>
+                <p>The extension stores operational values in <code>chrome.storage.local</code>, such as:</p>
+                <ul>
+                  <li>Global protection setting</li>
+                  <li>Per-domain override values</li>
+                  <li>Theme preference</li>
+                  <li>Daily and total blocked counters</li>
+                </ul>
+              </section>
+
+              <section id="permissions">
+                <h2>4. Permissions Used</h2>
+                <ul>
+                  <li><strong>storage</strong>: save local settings and counters</li>
+                  <li><strong>declarativeNetRequest</strong>: apply filtering rules</li>
+                  <li><strong>declarativeNetRequestFeedback</strong>: rule-match diagnostics</li>
+                  <li><strong>tabs</strong>: detect active tab domain for toggles</li>
+                  <li><strong>&lt;all_urls&gt;</strong>: evaluate requests against filtering rules</li>
+                </ul>
+              </section>
+
+              <section id="third-party">
+                <h2>5. Third-Party Requests</h2>
+                <p>
+                  Optional utility pages (for example speed/network tools) may request public endpoints
+                  to provide those features. These calls are feature-driven and not hidden analytics.
+                </p>
+              </section>
+
+              <section id="retention">
+                <h2>6. Retention</h2>
+                <p>
+                  Local extension data remains on your browser profile until you clear extension data
+                  or uninstall the extension.
+                </p>
+              </section>
+
+              <section id="changes">
+                <h2>7. Policy Changes</h2>
+                <p>
+                  This policy can be updated when features or architecture changes. The date above
+                  reflects the latest revision.
+                </p>
+              </section>
+
+              <section id="contact">
+                <h2>8. Contact</h2>
+                <p>
+                  For privacy questions, use the repository issue tracker:
+                  <a href="https://github.com/Joy-Majumder/CleanAdsSurf" target="_blank" rel="noopener noreferrer">CleanAdsSurf on GitHub</a>.
+                </p>
+              </section>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <a href="index.html" class="brand">
+              <img src="logo.png" alt="CleanAdsSurf" class="brand-icon" />
+              <span>CleanAdsSurf</span>
+            </a>
+            <p>Block ads. Surf clean. Privacy first.</p>
+          </div>
+
+          <div>
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="developer.html">Developer</a></li>
+              <li><a href="privacy.html">Privacy</a></li>
+              <li><a href="terms.html">Terms</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Project</h4>
+            <ul>
+              <li><a href="https://github.com/Joy-Majumder/CleanAdsSurf" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container footer-bottom">
+          <p>© <span data-year></span> CleanAdsSurf. Privacy-first tooling.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="site.js"></script>
+  </body>
+</html>

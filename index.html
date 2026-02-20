@@ -1,320 +1,303 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CleanAdsSurf - Block Ads, Surf Clean</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <nav class="navbar">
-    <div class="container">
-      <div class="logo">
-        <img src="icon.png" alt="CleanAdsSurf" class="logo-icon">
-        <span class="logo-text">CleanAdsSurf</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#features" class="nav-link">Features</a></li>
-        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-        <li><a href="#install" class="nav-link">Install</a></li>
-        <li><a href="developer.html" class="nav-link">Developer</a></li>
-      </ul>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CleanAdsSurf is a privacy-first Chrome extension for blocking ads and trackers with local-only controls and stats."
+    />
+    <title>CleanAdsSurf | Block Ads, Keep Privacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="site-header">
+        <nav class="nav container">
+          <a href="index.html" class="brand" aria-label="CleanAdsSurf Home">
+            <img src="logo.png" alt="CleanAdsSurf" class="brand-icon" />
+            <span>CleanAdsSurf</span>
+          </a>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">Block Ads. Surf Clean.</h1>
-        <p class="hero-subtitle">Lightning-fast ad blocker with real-time stats, speed testing, and privacy protection</p>
-        <div class="cta-buttons">
-          <button class="btn btn-primary" id="install-btn">Add to Chrome</button>
-          <button class="btn btn-secondary" id="learn-more-btn">Learn More</button>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul id="nav-links" class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="#install">Install</a></li>
+            <li><a href="#legal">Legal</a></li>
+            <li><a href="developer.html">Developer</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="container hero-grid">
+            <div>
+              <p class="kicker">Manifest V3 • Local-only privacy</p>
+              <h1>Clean browsing without compromises.</h1>
+              <p>
+                CleanAdsSurf blocks intrusive ads and tracking requests, keeps stats locally,
+                and gives you per-site control from a lightweight popup and dashboard.
+              </p>
+
+              <div class="hero-actions">
+                <button id="install-btn" class="btn btn-primary">Get Extension</button>
+                <a href="#features" class="btn btn-outline">Explore Features</a>
+              </div>
+
+              <ul class="badge-list" aria-label="Highlights">
+                <li>84+ ad and malware patterns</li>
+                <li>Per-domain control</li>
+                <li>No data selling</li>
+              </ul>
+            </div>
+
+            <aside class="pulse-card" aria-label="Protection Pulse">
+              <div class="pulse-top">
+                <p>Protection Pulse</p>
+                <span class="pulse-live">Live</span>
+              </div>
+
+              <div class="pulse-value">127</div>
+              <div class="pulse-caption">ads blocked today</div>
+
+              <div class="progress" role="img" aria-label="Protection status">
+                <span></span>
+              </div>
+
+              <div class="pulse-meta">
+                <div>
+                  <span>Total blocked</span>
+                  <strong>2,453</strong>
+                </div>
+                <div>
+                  <span>Status</span>
+                  <strong class="ok">Shield Active</strong>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="features" class="section">
+          <div class="container">
+            <div class="section-head">
+              <p class="kicker">Features</p>
+              <h2>Built for speed, privacy, and control</h2>
+              <p>
+                The extension focuses on clean blocking, transparent stats, and simple controls.
+              </p>
+            </div>
+
+            <div class="card-grid">
+              <article class="card">
+                <h3>Smart Blocking</h3>
+                <p>Blocks common ad, popup, and tracking patterns with declarative rules.</p>
+              </article>
+              <article class="card">
+                <h3>Real-Time Stats</h3>
+                <p>See daily and total blocked counts directly in popup and dashboard.</p>
+              </article>
+              <article class="card">
+                <h3>Domain Overrides</h3>
+                <p>Disable or enable protection for any domain in a single click.</p>
+              </article>
+              <article class="card">
+                <h3>Speed & VPN Utility</h3>
+                <p>Includes speed test and VPN simulation tools in the dashboard area.</p>
+              </article>
+              <article class="card">
+                <h3>Theme Support</h3>
+                <p>Light and dark themes across popup, dashboard, and utility pages.</p>
+              </article>
+              <article class="card">
+                <h3>Local Data</h3>
+                <p>Settings and counters are stored in <code>chrome.storage.local</code>.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="how" class="section">
+          <div class="container">
+            <div class="section-head">
+              <p class="kicker">How It Works</p>
+              <h2>Three simple steps</h2>
+            </div>
+
+            <div class="card-grid">
+              <article class="card">
+                <h4>1. Install</h4>
+                <p>Load CleanAdsSurf in Chrome from ZIP or local source.</p>
+              </article>
+              <article class="card">
+                <h4>2. Protect</h4>
+                <p>Blocking starts automatically for known ad and tracker patterns.</p>
+              </article>
+              <article class="card">
+                <h4>3. Control</h4>
+                <p>Toggle global/domain protection and monitor stats in real time.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="install" class="section">
+          <div class="container">
+            <div class="section-head">
+              <p class="kicker">Installation</p>
+              <h2>Choose your setup path</h2>
+            </div>
+
+            <div class="install-grid">
+              <article class="install-card">
+                <span class="install-tag">Recommended</span>
+                <h3>Download ZIP</h3>
+                <ol>
+                  <li>Download the extension ZIP file.</li>
+                  <li>Extract it to a folder.</li>
+                  <li>Open <code>chrome://extensions</code>.</li>
+                  <li>Enable Developer mode.</li>
+                  <li>Click Load unpacked and select extracted folder.</li>
+                </ol>
+                <button id="download-btn" class="btn btn-primary">Download ZIP</button>
+              </article>
+
+              <article class="install-card">
+                <span class="install-tag">Optional</span>
+                <h3>Chrome Web Store</h3>
+                <p>
+                  If a public store URL is configured, install in one click.
+                </p>
+                <button id="auto-install-btn" class="btn btn-outline">Open Web Store</button>
+              </article>
+
+              <article class="install-card">
+                <span class="install-tag">Developers</span>
+                <h3>GitHub Source</h3>
+                <p>
+                  Clone the repository and load unpacked from your local checkout.
+                </p>
+                <button id="git-clone-btn" class="btn btn-outline">View on GitHub</button>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <p class="kicker">FAQ</p>
+              <h2>Common questions</h2>
+            </div>
+
+            <div class="faq-grid">
+              <article class="faq-item">
+                <h3>Does it collect browsing data?</h3>
+                <p>No, core protection and stats run locally in your browser.</p>
+              </article>
+              <article class="faq-item">
+                <h3>Will it slow down Chrome?</h3>
+                <p>It is built on low-overhead Manifest V3 APIs.</p>
+              </article>
+              <article class="faq-item">
+                <h3>Can I disable it per site?</h3>
+                <p>Yes, per-domain controls are available in popup and dashboard.</p>
+              </article>
+              <article class="faq-item">
+                <h3>Is it free?</h3>
+                <p>Yes, the current project is free and open-source.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="legal" class="section">
+          <div class="container">
+            <div class="section-head">
+              <p class="kicker">Legal</p>
+              <h2>Policy and terms</h2>
+            </div>
+
+            <div class="link-grid">
+              <article class="link-card">
+                <h3>Privacy Policy</h3>
+                <p>How data is handled, what stays local, and what permissions are used.</p>
+                <a href="privacy.html" class="text-link">Read Privacy Policy</a>
+              </article>
+
+              <article class="link-card">
+                <h3>Terms of Service</h3>
+                <p>Usage conditions, limitations, and open-source project terms.</p>
+                <a href="terms.html" class="text-link">Read Terms of Service</a>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <a href="index.html" class="brand">
+              <img src="logo.png" alt="CleanAdsSurf" class="brand-icon" />
+              <span>CleanAdsSurf</span>
+            </a>
+            <p>Block ads. Surf clean. Privacy first.</p>
+          </div>
+
+          <div>
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#install">Install</a></li>
+              <li><a href="developer.html">Developer</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li>
+                <a href="https://github.com/Joy-Majumder/CleanAdsSurf" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="trust-badges">
-          <span class="badge">Manifest V3</span>
-          <span class="badge">Zero Trackers</span>
-          <span class="badge">100% Free</span>
+
+        <div class="container footer-bottom">
+          <p>© <span data-year></span> CleanAdsSurf. All rights reserved.</p>
         </div>
-      </div>
-      <div class="hero-visual">
-        <div class="extension-preview">
-          <div class="preview-header"></div>
-          <div class="preview-content">
-            <div class="stat-item">
-              <div class="stat-label">Today's Protection</div>
-              <div class="stat-value">127</div>
-              <div class="stat-unit">ads blocked</div>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <div class="stat-label">Total Blocked</div>
-              <div class="stat-value">2,453</div>
-              <div class="stat-unit">since install</div>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill"></div>
-            </div>
-            <div class="status-indicator">
-              <span class="status-dot"></span>
-              <span class="status-text">Active & Protecting</span>
-            </div>
+      </footer>
+
+      <div id="install-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="install-modal-title">
+        <div class="modal-card">
+          <button id="modal-close" class="modal-close" aria-label="Close">×</button>
+          <h3 id="install-modal-title">Web Store link is not configured yet</h3>
+          <p>
+            Use the ZIP installation method for now, or open Chrome extension setup help.
+          </p>
+          <div class="modal-actions">
+            <button id="open-chrome-btn" class="btn btn-primary">Open Chrome Help</button>
+            <button id="close-modal-btn" class="btn btn-outline">Close</button>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <section id="features" class="features">
-    <div class="container">
-      <h2 class="section-title">Powerful Features</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>Lightning Fast</h3>
-          <p>Minimal performance impact with advanced declarativeNetRequest API</p>
-        </div>
-        <div class="feature-card">
-          <h3>Real-Time Stats</h3>
-          <p>Watch ads get blocked in real-time with beautiful counter</p>
-        </div>
-        <div class="feature-card">
-          <h3>Speed Testing</h3>
-          <p>Built-in speed test with download, upload, and ping measurements</p>
-        </div>
-        <div class="feature-card">
-          <h3>Privacy First</h3>
-          <p>100% local processing, no data collection or tracking</p>
-        </div>
-        <div class="feature-card">
-          <h3>Smart Blocking</h3>
-          <p>84+ ad networks and malware domains blocked automatically</p>
-        </div>
-        <div class="feature-card">
-          <h3>Per-Domain Control</h3>
-          <p>Disable protection on specific sites with one click</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="how-it-works" class="how-it-works">
-    <div class="container">
-      <h2 class="section-title">How It Works</h2>
-      <div class="steps-container">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Install Extension</h3>
-          <p>Add CleanAdsSurf to your Chrome browser in seconds</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>Automatic Protection</h3>
-          <p>Start blocking ads across all 84+ networks instantly</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Monitor & Control</h3>
-          <p>View real-time stats and customize per-domain settings</p>
-        </div>
-      </div>
-
-      <div class="blocked-domains">
-        <h3>Blocks These Ad Networks:</h3>
-        <div class="domains-list">
-          <span class="domain-tag">Google Ads</span>
-          <span class="domain-tag">Facebook Pixels</span>
-          <span class="domain-tag">Taboola</span>
-          <span class="domain-tag">Outbrain</span>
-          <span class="domain-tag">Criteo</span>
-          <span class="domain-tag">Amazon Ads</span>
-          <span class="domain-tag">Twitter Pixels</span>
-          <span class="domain-tag">Analytics</span>
-          <span class="domain-tag">Malware Sites</span>
-          <span class="domain-tag">And 75+ more</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="install" class="install-section">
-    <div class="container">
-      <h2 class="section-title">Get Started Now</h2>
-      <div class="install-methods">
-        <div class="install-card method-1">
-          <div class="method-icon">1</div>
-          <h3>Download & Load</h3>
-          <p>Direct installation from local folder</p>
-          <ol class="manual-steps">
-            <li>Download extension ZIP</li>
-            <li>Extract to folder</li>
-            <li>Open chrome://extensions</li>
-            <li>Enable Developer mode</li>
-            <li>Click Load unpacked</li>
-            <li>Select folder - Done!</li>
-          </ol>
-          <button class="btn btn-primary btn-large" id="download-btn">Download ZIP</button>
-          <p class="method-note">Fastest, no waiting for approval</p>
-        </div>
-
-        <div class="install-card method-2">
-          <div class="method-icon">2</div>
-          <h3>Chrome Web Store</h3>
-          <p>Official Chrome store installation</p>
-          <p class="method-description">One-click installation from Chrome Web Store (when published)</p>
-          <button class="btn btn-primary btn-large" id="auto-install-btn">Add to Chrome</button>
-          <p class="method-note">Easy for regular users, requires approval</p>
-        </div>
-
-        <div class="install-card method-3">
-          <div class="method-icon">3</div>
-          <h3>Git Clone</h3>
-          <p>Development installation</p>
-          <ol class="manual-steps">
-            <li>Clone from GitHub</li>
-            <li>cd extension folder</li>
-            <li>Open chrome://extensions</li>
-            <li>Enable Developer mode</li>
-            <li>Load unpacked</li>
-            <li>Select extension folder</li>
-          </ol>
-          <button class="btn btn-secondary btn-large" id="git-clone-btn">View on GitHub</button>
-          <p class="method-note">For developers, get latest updates</p>
-        </div>
-      </div>
-
-      <div class="installation-tips">
-        <h4>Installation Tips:</h4>
-        <ul>
-          <li>Method 1: Fastest - no approval needed</li>
-          <li>Method 2: Easiest - one-click install</li>
-          <li>Method 3: For developers - get latest code</li>
-          <li>Extension works offline and locally</li>
-          <li>No data is sent to any servers</li>
-          <li>Requires Chrome 114 or higher</li>
-          <li>Works on desktop and laptop only</li>
-          <li>Safe to uninstall and reinstall anytime</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-      </div>
-    </div>
-  </section>
-
-  <section class="stats-section">
-    <div class="container">
-      <h2 class="section-title">By The Numbers</h2>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">84+</div>
-          <div class="stat-label">Ad Networks Blocked</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">0</div>
-          <div class="stat-label">Data Collected</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Free & Open</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">&lt;1ms</div>
-          <div class="stat-label">Blocking Latency</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq-section">
-    <div class="container">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="faq-grid">
-        <div class="faq-item">
-          <h4>Is CleanAdsSurf safe?</h4>
-          <p>Yes! We use Chrome's declarativeNetRequest API which is sandboxed and secure. We never collect your data.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Will it slow down my browser?</h4>
-          <p>No, it's optimized for performance. The extension uses minimal resources and barely impacts browsing speed.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Does it work on all websites?</h4>
-          <p>Yes, it works on all websites. You can disable it per-domain if a site has issues.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Is my data safe?</h4>
-          <p>100% safe. All processing happens locally on your device. Nothing is sent to external servers.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Can I use it on mobile?</h4>
-          <p>Currently available on desktop Chrome only. Mobile support is planned for future versions.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Is there a premium version?</h4>
-          <p>No, CleanAdsSurf is completely free with all features included.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>CleanAdsSurf</h4>
-          <p>Block ads. Surf clean. Privacy first.</p>
-        </div>
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#install">Installation</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="https://github.com/Joy-Majumder/CleanAdsSurf" target="_blank">GitHub</a></li>
-            <li><a href="#" target="_blank">Privacy Policy</a></li>
-            <li><a href="#" target="_blank">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Joy. All rights reserved. Built with passion for the web.</p>
-      </div>
-    </div>
-  </footer>
-
-  <div id="install-modal" class="modal hidden">
-    <div class="modal-content">
-      <button class="modal-close" id="modal-close">&times;</button>
-      <h2>Installing CleanAdsSurf</h2>
-      <div class="modal-steps">
-        <div class="modal-step">
-          <div class="step-icon">1</div>
-          <p>A new tab will open in your browser</p>
-        </div>
-        <div class="modal-step">
-          <div class="step-icon">2</div>
-          <p>Click the "Add to Chrome" button</p>
-        </div>
-        <div class="modal-step">
-          <div class="step-icon">3</div>
-          <p>Confirm the installation prompt</p>
-        </div>
-        <div class="modal-step">
-          <div class="step-icon">✓</div>
-          <p>That's it! Extension is ready to use</p>
-        </div>
-      </div>
-      <button class="btn btn-primary btn-large" id="open-chrome-btn">Open Chrome Web Store</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="site.js"></script>
+  </body>
 </html>
